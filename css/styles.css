@@ -1,0 +1,322 @@
+/* Paleta de Colores Sugerida:
+--primary-brown: #795548; (Marrón tierra/madera)
+--secondary-orange: #FF8F00; (Naranja cálido, como el fuego o el atardecer)
+--accent-green: #4CAF50; (Verde hoja, natural)
+--light-beige: #F5F5DC; (Beige suave)
+--dark-text: #333;
+--light-text: #f8f8f8;
+*/
+
+/* Estilos Generales */
+body {
+    font-family: 'Georgia', serif; /* Fuente más clásica y cálida */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc; /* Beige suave */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #795548; /* Marrón tierra */
+    color: #f8f8f8; /* Texto claro */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Para posibles elementos de fondo */
+    overflow: hidden; /* Para contener bien la imagen de fondo si se agrega */
+  }
+  
+  header::before { /* Efecto de superposición para la imagen de fondo */
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* Capa semitransparente sobre la imagen */
+      z-index: 1;
+  }
+  
+  .header-content {
+      position: relative;
+      z-index: 2; /* Asegura que el texto esté encima de la superposición */
+  }
+  
+  
+  header h1 {
+    margin: 0;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  header p {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  /* Secciones Principales */
+  section {
+    padding: 60px 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-intro {
+    text-align: center;
+    background-color: #fefcf5; /* Blanco crema */
+  }
+  
+  .section-intro h2 {
+    color: #795548;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .section-intro p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Sección de Productos */
+  .section-products h2 {
+    text-align: center;
+    color: #795548;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  
+  .all-homemade-note {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff8f00; /* Naranja cálido */
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  .product-category {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    overflow: hidden; /* Para el efecto de despliegue */
+  }
+  
+  .category-title {
+    background-color: #ff8f00; /* Naranja cálido */
+    color: white;
+    padding: 18px 25px;
+    margin: 0;
+    font-size: 1.8em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    user-select: none; /* Evita que el texto se seleccione al hacer doble clic */
+  }
+  
+  .category-title:hover {
+    background-color: #e68000; /* Naranja un poco más oscuro al pasar el mouse */
+  }
+  
+  /* Estilo para el ícono de "abrir/cerrar" */
+  .category-title::after {
+      content: '▼'; /* Flecha hacia abajo */
+      font-size: 0.8em;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+  }
+  
+  .category-title.open::after {
+      transform: rotate(180deg); /* Flecha hacia arriba cuando está abierto */
+  }
+  
+  .category-content {
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+    background-color: #fefefe;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transición para la animación de despliegue */
+    max-height: 500px; /* Altura máxima para la transición */
+    opacity: 1; /* Opacidad para la transición */
+  }
+  
+  .category-content.hidden {
+    max-height: 0; /* Colapsa el contenido */
+    opacity: 0; /* Lo hace invisible */
+    padding-top: 0; /* Quita el padding para que se vea bien el colapso */
+    padding-bottom: 0;
+    border-top: none; /* Elimina el borde superior cuando está oculto */
+  }
+  
+  .category-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+  }
+  
+  .category-content li {
+    background-color: #f8f8f8;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 5px solid #4CAF50; /* Verde hoja */
+    font-size: 1.05em;
+  }
+  
+  .img-product {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sección de Contacto */
+  .section-contact {
+    text-align: center;
+    background-color: #fefcf5; /* Blanco crema */
+    border-top: 1px solid #eee;
+  }
+  
+  .section-contact h2 {
+    color: #795548;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  .whatsapp-button {
+    display: inline-block;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* Botón redondeado */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 25px;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #1da851;
+    transform: translateY(-3px);
+  }
+  
+  .qr-container {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Para que el fondo solo abarque el contenido */
+  }
+  
+  .qr-container p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .qr-code {
+    border: 5px solid #795548; /* Borde rústico para el QR */
+    border-radius: 5px;
+  }
+  
+  /* Pie de Página */
+  footer {
+    background-color: #5d4037; /* Marrón más oscuro */
+    color: #f8f8f8;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+  /* --- Responsive Design (Media Queries) --- */
+  
+  /* Para pantallas más pequeñas (móviles) */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.5em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    section {
+      padding: 40px 0;
+      margin-bottom: 20px;
+    }
+  
+    .section-intro h2,
+    .section-products h2,
+    .section-contact h2 {
+      font-size: 2em;
+    }
+  
+    .category-title {
+      font-size: 1.4em;
+      padding: 15px 20px;
+    }
+  
+    .category-content {
+      padding: 15px 20px;
+    }
+  
+    .whatsapp-button {
+      font-size: 1em;
+      padding: 12px 25px;
+    }
+  }
+  
+  /* Para pantallas aún más pequeñas */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    .section-intro p {
+      font-size: 0.95em;
+    }
+  
+    .category-title {
+      font-size: 1.2em;
+    }
+  
+    .category-content li {
+      font-size: 0.9em;
+    }
+  }

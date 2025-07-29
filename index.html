@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Cocina de Estela - Sabores Caseros del Delta</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>La Cocina de Estela</h1>
+        <p>Sabores caseros, con el alma del Delta</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-intro">
+        <div class="container">
+          <h2>Nuestra Historia, Tu Sabor</h2>
+          <p>
+            Desde el corazón del Delta, en La Cocina de Estela elaboramos cada
+            producto con la pasión de lo casero y la frescura de la isla. Usamos
+            ingredientes seleccionados para llevar a tu mesa un pedacito de
+            nuestra tradición y sabor. ¡Bienvenidos!
+          </p>
+          <img
+            src="img/delta-river.jpg"
+            alt="Paisaje del Delta del Tigre con río y vegetación"
+            class="img-fluid"
+          />
+          </div>
+      </section>
+
+      <section class="section-products">
+        <div class="container">
+          <h2>Nuestros Productos Artesanales</h2>
+          <p class="all-homemade-note">
+            ¡Recordá! Todos nuestros productos son <strong>100% caseros</strong>,
+            elaborados con amor y dedicación.
+          </p>
+
+          <div class="product-category">
+            <h3 class="category-title">🥟 Empanadas Caseras</h3>
+            <div class="category-content hidden">
+              <ul>
+                <li><strong>Carne:</strong> El clásico que nunca falla.</li>
+                <li><strong>Pollo:</strong> Suaves y jugosas.</li>
+                <li><strong>Jamón y Queso:</strong> La combinación perfecta.</li>
+                <li>
+                  <strong>Zapallito:</strong> ¡La especialidad de la casa! Un sabor
+                  único y delicioso.
+                </li>
+                <li><strong>Choclo:</strong> Dulces y cremosas.</li>
+                <li><strong>Verdura:</strong> Frescas y nutritivas.</li>
+              </ul>
+              <img src="img/empanadas.jpg" alt="Variedad de empanadas" class="img-product" />
+              </div>
+          </div>
+
+          <div class="product-category">
+            <h3 class="category-title">🥪 Sánguches de Milanesa de Cerdo</h3>
+            <div class="category-content hidden">
+              <p>
+                Nuestros sanguches de milanesa de cerdo son completos y
+                abundantes. ¡Una verdadera bomba de sabor!
+              </p>
+              <ul>
+                <li>
+                  <strong>Completa:</strong> Con jamón, queso, lechuga y tomate.
+                </li>
+              </ul>
+              <img src="img/sandwich-milanesa.jpg" alt="Sándwich de milanesa completo" class="img-product" />
+              </div>
+          </div>
+
+          <div class="product-category">
+            <h3 class="category-title">🍖 Embutidos Caseros</h3>
+            <div class="category-content hidden">
+              <p>
+                Ideales para una picada con amigos o para darle un toque especial
+                a tus comidas.
+              </p>
+              <ul>
+                <li><strong>Salames:</strong> De campo, con el sabor justo.</li>
+                <li><strong>Bondiolas:</strong> Tiernas y estacionadas.</li>
+                <li><strong>Chorizos:</strong> Puros y sabrosos.</li>
+              </ul>
+              <img src="img/embutidos.jpg" alt="Variedad de embutidos" class="img-product" />
+              </div>
+          </div>
+
+          <div class="product-category">
+            <h3 class="category-title">🍟 Porción de Papas Fritas</h3>
+            <div class="category-content hidden">
+              <p>¡El acompañamiento perfecto para cualquier comida!</p>
+              <ul>
+                <li>Papas crocantes, recién hechas y levemente saladas.</li>
+              </ul>
+              <img src="img/papas-fritas.jpg" alt="Porción de papas fritas" class="img-product" />
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-contact">
+        <div class="container">
+          <h2>¡Hacé Tu Pedido!</h2>
+          <p>
+            Contactanos por WhatsApp para consultar el menú del día y hacer tu
+            pedido.
+          </p>
+          <div class="contact-info">
+            <p><strong>Teléfono:</strong> 11 6029-6364</p>
+            <a
+              href="https://wa.me/5491160296364?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20La%20Cocina%20de%20Estela."
+              target="_blank"
+              class="whatsapp-button"
+              >Enviar mensaje por WhatsApp</a
+            >
+            <div class="qr-container">
+              <p>O escaneá el QR:</p>
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/5491160296364?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20La%20Cocina%20de%20Estela."
+                alt="Código QR para WhatsApp"
+                class="qr-code"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 La Cocina de Estela. Todos los derechos reservados.</p>
+        <p>Hecho con amor desde el corazón del Delta.</p>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript para la funcionalidad de expansión de categorías
+      document.addEventListener('DOMContentLoaded', () => {
+        const categoryTitles = document.querySelectorAll('.category-title');
+
+        categoryTitles.forEach((title) => {
+          title.addEventListener('click', () => {
+            const content = title.nextElementSibling; // Selecciona el div .category-content
+            content.classList.toggle('hidden'); // Alterna la clase 'hidden'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
